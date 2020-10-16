@@ -16,15 +16,6 @@ public class AuthenticationController {
 		modelAndView.setViewName("login"); // resources/template/login.html
 		return modelAndView;
 	}
-
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public ModelAndView register() {
-		ModelAndView modelAndView = new ModelAndView();
-		// User user = new User();
-		// modelAndView.addObject("user", user); 
-		modelAndView.setViewName("register"); // resources/template/register.html
-		return modelAndView;
-	}
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ModelAndView home() {
