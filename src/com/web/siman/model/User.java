@@ -1,4 +1,4 @@
-package com.webencyclop.siman.model;
+package com.web.siman.model;
 
 import java.util.Set;
 
