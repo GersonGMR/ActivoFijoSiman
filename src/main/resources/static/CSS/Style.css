@@ -1,0 +1,302 @@
+.row > div{
+  background: #f2f2f2;
+  padding: 30px;
+}
+
+		/*aposition = position relative
+		  bposition = position absolute*/
+		div.aposition {
+			position: relative;
+			float:left;
+		}
+		}
+
+		div.bposition {
+			border: 10px solid black; 
+		}
+
+		label.prueba {
+			position: relative;
+			top: 10px;
+			
+			float:left;
+			margin: 9px 185px;	
+		}
+
+		input.pruebai {
+			position: absolute;
+			top: 40px;
+			border:10px solid black;
+
+		}
+
+		label.tipo-eq{
+			position: absolute;
+			top: 185px;
+			margin: 9px 185px;
+		}
+		
+		label.PO {
+			margin: 9px 185px;
+			position: absolute;
+			top: 360px;
+			left:150px;
+		}	
+
+		label.credito{
+			margin: 9px 185px;
+			position: absolute;
+			top: 360px;
+			right:235px;
+		}	
+
+		input.ticket {
+			margin: 9px 185px;
+			position: absolute;
+			top: 360px;
+			left:-70px ;
+		}
+
+		input.PO{
+			margin: 9px 185px;
+			position: absolute;
+			top: 360px;
+			left:215px;
+		}
+
+		input.credito{
+			margin: 9px 185px;
+			position: absolute;
+			top: 360px;
+			left: 580px;
+		}
+
+		select.proveedor { 
+			margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 415px;
+			left: -70px;
+			
+		 }
+
+		 label.jobcosting {
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 415px;
+			left: 150px;
+		 }
+
+		 input.jobcosting {
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 415px;
+			left: 215px;
+		 }
+
+		 label.garantia {
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 415px;
+			left: 443px;
+		 }
+
+		 select.garantia{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 415px;
+			left: 580px;
+		 }
+
+		 input.retaceo{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 470px;
+			left: -70px;
+		 }
+
+		 label.envio_entrada{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 470px;
+			left: 150px;
+		 }
+
+		 input.envio_entrada{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top:470px;
+			left: 215px;
+		 }
+
+		 select.clase_equipo{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 535px;
+			left: -70px;
+		 }
+
+		 label.SO{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 535px;
+			left: 150px;
+		 }
+
+		 select.SO{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 535px;
+			left: 215px;
+		 }
+
+		 select.marca{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 590px;
+			left: -70px;
+		 }
+
+		 label.key{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 590px;;
+			left: 150px;
+		 }
+
+		 input.key{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 590px;;
+			left: 215px;
+		 }
+
+		 select.familia{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 645px;
+			left: -70px;
+		 }
+		 
+		 label.serie{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 645px;
+			left: 150px;
+		 }
+
+		 select.serie{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 645px;
+			left: 215px;
+		 }
+
+		 select.modelo{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 700px;
+			left: -70px;
+		 }
+
+		 label.pc_mac{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 700px;
+			left: 150px;
+		 }
+
+		 input.pc_mac{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 708px;
+			left: 215px;
+		 }
+
+		 select.fecha{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 755px;
+			left: -70px;
+		 }
+
+		 label.comprador{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 755px;
+			left: 150px;
+		 }
+
+		 select.comprador{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 755px;
+			left: 215px;
+		 }
+
+		 select.procesador{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 905px;
+			left:-70px;
+		 }
+
+		 select.memoria{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 960px;
+			left:-70px;
+		 }
+
+		 select.disco{
+		 	margin: 9px 185px;
+			position: absolute;
+			width: 181px;
+			top: 1015px;
+			left:-70px;
+		 }
+
+		 label.comentarios{
+		 	margin: 9px 185px;
+			position: absolute;
+			top: 875px;
+			left:349px;
+		 }
+
+		 textarea.comentarios{
+		 	height: 149px;
+		 	width: 500px;
+		 	margin: 9px 185px;
+			position: absolute;
+			top: 905px;
+			left: 350px;
+		 }
+
+
+
+
+

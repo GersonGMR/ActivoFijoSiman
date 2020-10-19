@@ -1,65 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>SIMAN</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">		
+	</style>
+	<link rel="stylesheet" type="text/css" href="/CSS/Style.css">
+	<!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <title>Creando Activo Fijo</title>
+
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well well-sm">
-                <form class="form-horizontal" method="post">
-                    <fieldset>
-                        <legend class="text-center header">Ejemplo de formulario</legend>
+<!--Luego mejorar esta parte como la de entrada de datos-->
+	<div class="form-group">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="aposition">
+						<h1>Ingreso Activo Fijo</h1>
+					</div>
+					<div class="bposition">
+						<label class="prueba">Vencimiento garantia<input type="text" name = "garantia" placeholder="" readonly="">
+						</label>
+					</div>						
+				</div>
+			</div>
+		</div>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                            </div>
-                        </div>
+	<form method="" action ="">	
+		<div class = "container">
+			<div class=row>
+				<div class="col">
+					<div>
+		<!--Luego mejorar esta parte como la de entrada de datos-->
+						<label>Correlativo<input type="text" name = "correlativo" placeholder=""></label>
+						<label>Usuario Autorizador<input type="text" name ="autorizador" placeholder=""></label>	
+						<br><br><br>
+						<input type="text" name ="organizacion" placeholder="ALSISA S.A DE C.V" readonly="">
+						<input type="text" name ="pais" placeholder="El SALVADOR" readonly="">
+						<input type="text" name ="sucursal" placeholder="almacenes Siman S.A de C.V El Salvador" readonly="">		
+						<br><br><br>
+						<label class="aposition">Numero Activo<input type="text" name = "numeroactivo" placeholder=""></label>	
+						<label class="tipo-eq">tipo equipo<select name="tipo_equipo" id="equipo">
+						<option value="default">opciones</option>
+  						<option value="cpu">CPU</option>
+						</select></label>
+					<hr>
+						<h1>Datos de entrada</h1>
+						<br><br>
+						<label class="aposition">ticket</label>
+						<input class="ticket"type="text" name ="ticket" placeholder="">
+						<label class="PO">PO</label>
+						<input class ="PO" type="text" name ="orden_compra" placeholder="">
+						<label class="credito">Credito fiscal</label>
+						<input class="credito" type="text" name ="Credito_fiscal" placeholder="">
+						<br><br>
+						<label class="aposition">Proveedor</label>
+						<select class="proveedor"name="proveedor" id="proveedor"><option value="default">opciones</option>
+  						<option value="proveedor">Milton Mejia</option>
+						</select>
+						<label class="jobcosting">Job Costing</label>
+						<input class ="jobcosting" type="text" name ="job_costing" placeholder="">
+						<label class="garantia">Garantia</label>
+						<select class="garantia" name="garantia" id="garantia"><option value="default">opciones</option>
+  						<option value="garantia">1 MES</option>
+						</select>
+						<br><br>
+						<label class="aposition">Retaceo</label>
+						<input class ="retaceo" type="text" name ="retaceo" placeholder="">
+						<label class="envio_entrada">Envio Entrada</label>
+						<input class ="envio_entrada" type="text" name ="envio_entrada" placeholder="">
+					<hr>	
+						<label class="aposition">Clase Equipo</label>
+						<select class="clase_equipo"name="clase_equipo" id="clase_equipo"><option value="default">--Equipo--</option>
+  						<option value="clase_equipo">Xd</option>
+						</select>
+						<label class="SO">Sistema Operativo</label>
+						<select class="SO"name="sistema_operativo" id="sistema_operativo"><option value="default">--SO--</option>
+  						<option value="sistema_operativo">Xd</option>
+						</select>
+						<br><br>
+						<label class="aposition">Marca</label>
+						<select class="marca" name="marca" id="marca"><option value="default">--Marca--</option>
+  						<option value="marca">Xd</option>
+						</select>
+						<label class="key">Llave Producto</label>
+						<input class ="key" type="text" name ="key" placeholder="">
+						<br><br>
+						<label class="aposition">Familia</label>
+						<select class="familia"name="familia" id="familia"><option value="default">--Familia--</option>
+  						<option value="familia">Xd</option>
+						</select>
+						<label class="serie">Serie</label>
+						<select class="serie"name="serie" id="serie"><option value="default">--Serie--</option>
+  						<option value="serie">Xd</option>
+						</select>
+						<br><br>
+						<label class="aposition">Modelo</label>
+						<select class="modelo"name="modelo" id="modelo"><option value="default">--Modelo--</option>
+  						<option value="modelo">Xd</option>
+						</select>
+						<label class="pc_mac">PC/Mac</label>
+						<input class ="pc_mac" type="checkbox" name ="mac" placeholder="">
+						<br><br>
+						<label class="aposition">Fecha</label>
+						<select class="fecha"name="fecha" id="fecha"><option value="default">--Fecha--</option>
+  						<option value="fecha">Xd</option>
+						</select>
+						<label class="comprador">Comprador</label>
+						<select class="comprador"name="comprador" id="comprador"><option value="default">--Comprador--</option>
+  						<option value="comprador">Milton Mejia</option>
+						</select>
+					<hr>
+						<h1>Datos Complementarios</h1>
+						<br>
+						<label class="aposition">Procesador</label>
+						<label class="comentarios">Comentarios</label>
+						<textarea class="comentarios"></textarea>
+						<select class="procesador"name="procesador" id="procesador"><option value="default">--Procesador--</option>
+  						<option value="procesador">Xd</option>
+						</select>
+						<br><br>
+						<label class="aposition">Memoria</label>
+						<select class="memoria"name="memoria" id="memoria"><option value="default">--Memoria--</option>
+  						<option value="memoria">Xd</option>
+						</select>
+						<br><br>
+						<label class="aposition">Disco Duro</label>
+						<select class="disco"name="disco" id="disco"><option value="default">--Disco Duro--</option>
+  						<option value="disco">Xd</option>
+						</select>
+				</div>
+			</div>
+		</div>
+	</form>
+	</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                            </div>
-                        </div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+ 	
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>
+
+
+
