@@ -1,10 +1,10 @@
-package com.webencyclop.demo;
+package com.siman.activofijo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class ActivofijoApplicationTests {
 
 	@Test
 	void contextLoads() {
