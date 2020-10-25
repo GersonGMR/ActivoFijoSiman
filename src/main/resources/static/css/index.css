@@ -1,0 +1,47 @@
+nav.navbar {
+	background-color: #ab343a;
+	padding: 25px 0;
+}
+
+
+form {
+	width: 50%;
+	margin: 10% auto;
+}
+
+.row > div {
+  background: #fff;
+  padding: 10px 30px;
+}
+
+img {
+	padding-top: 25%;
+}
+
+/*aposition = position relative ------ bposition = position absolute*/
+
+span.input-group-text {
+	background-color: #fff;
+	color: #ab343a;
+	font-weight: bold;
+	border-style: none;
+}
+
+p {
+	text-align: center;
+}
+p a {
+	color: #346EAB;
+}
+
+
+button.btn {
+	width: 100%;
+	border-color: #ab343a;
+	color: #ab343a;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+button.btn:hover {
+	background-color: #ab343a;
+}

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+	</style>
+	<link rel="stylesheet" type="text/css" href="/css/home.css">
+	<!-- Required meta tags -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Creando Activo Fijo</title>
+
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark">
+	  <a class="navbar-brand" href="#">Siman</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Ingreso Activo
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Hardware</a>
+	          <a class="dropdown-item" href="#">Software</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Asignación
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Hardware</a>
+	          <a class="dropdown-item" href="#">Software</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Reasignación
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Hardware</a>
+	          <a class="dropdown-item" href="#">Software</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Préstamos
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Action</a>
+	          <a class="dropdown-item" href="#">Another action</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Consultas
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Hardware</a>
+	          <a class="dropdown-item" href="#">Software</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Reportes
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Hardware</a>
+	          <a class="dropdown-item" href="#">Software</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Utilitarios
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Hardware</a>
+	          <a class="dropdown-item" href="#">Software</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Mantenimientos
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Hardware</a>
+	          <a class="dropdown-item" href="#">Software</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Seguridad
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="#">Hardware</a>
+	          <a class="dropdown-item" href="#">Software</a>
+	          <div class="dropdown-divider"></div>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	    </ul>
+
+	    <form class="form-inline my-2 my-lg-0">
+	      <a class="navbar-brand" href="#">Salir</a>
+	    </form>
+	  </div>
+	</nav>
+
+<!--Luego mejorar esta parte como la de entrada de datos-->
+	<div class="form-group">
+		<div class="container">
+			<div class="row">
+				<div class="titulo">
+					<h1>Ingreso Activo Fijo</h1>
+				</div>
+			</div>
+		</div>
+
+	<form method="" action ="">
+		<div class = "container">
+			<div class=row>
+
+		<!--Luego mejorar esta parte como la de entrada de datos-->
+
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Organización</span>
+					</div>
+					<input type="text" class="form-control" name="organizacion" placeholder="ALSISA S.A DE C.V" readonly>
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">País</span>
+					</div>
+					<input type="text" class="form-control" name="pais" placeholder="El SALVADOR" readonly>
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Compañía</span>
+					</div>
+					<input type="text" class="form-control" name="compañia" placeholder="Almacenes Siman S.A de C.V El Salvador" readonly>
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Garantía</span>
+					</div>
+					<input type="text" class="form-control" name="garantia" placeholder="" readonly>
+				</div>
+
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Correlativo</span>
+					</div>
+					<input type="text" class="form-control" name="correlativo" placeholder="">
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Usuario Autorizador</span>
+					</div>
+					<input type="text" class="form-control" name="autorizador" placeholder="">
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Número Activo</span>
+					</div>
+					<input type="text" class="form-control" name="numeroactivo" placeholder="">
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Tipo de Equipo</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="tipo_equipo" id="equipo">
+							<option value="default">--Opciones--</option>
+							<option value="cpu">CPU</option>
+						</select>
+					</div>
+				</div>
+
+
+				<div class="col-md-12">
+					<h1>Datos de entrada</h1> <hr>
+				</div>
+
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Ticket</span>
+					</div>
+					<input type="text" class="form-control" name="ticket" placeholder="">
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">PO</span>
+					</div>
+					<input type="text" class="form-control" name="orden_compra" placeholder="">
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Envio Entrada</span>
+					</div>
+					<input type="text" class="form-control" name="envio_entrada" placeholder="">
+				</div>
+
+				<div class="col-md-8">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Proveedor</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="proveedor" id="proveedor">
+							<option value="default">--Proveedor--</option>
+	  						<option value="proveedor">Milton Mejia</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Credito Fiscal</span>
+					</div>
+					<input type="text" class="form-control" name="credito_fiscal" placeholder="">
+				</div>
+
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Retaceo</span>
+					</div>
+					<input type="text" class="form-control" name="retaceo" placeholder="">
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Job Costing</span>
+					</div>
+					<input type="text" class="form-control" name="job_costing" placeholder="">
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Garantía</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="garantia" id="garantia">
+							<option value="default">opciones</option>
+							<option >1 MES</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<hr>
+				</div>
+
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Clase Equipo</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="clase_equipo" id="clase_equipo">
+							<option value="default">--Equipo--</option>
+	  						<option value="clase_equipo">Xd</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Marca</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="marca" id="marca">
+							<option value="default">--Marca--</option>
+	  						<option value="marca">Xd</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Familia</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="familia" id="familia">
+							<option value="default">--Familia--</option>
+							<option value="familia">Xd</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Modelo</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="modelo" id="modelo">
+							<option value="default">--Modelo--</option>
+							<option value="modelo">Xd</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Sistema Operativo</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="sistema_operativo" id="sistema_operativo">
+							<option value="default">--SO--</option>
+	  						<option value="sistema_operativo">Xd</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Llave Producto</span>
+					</div>
+					<input class="form-control" type="text" name ="key" placeholder="">
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Serie</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="serie" id="serie">
+							<option value="default">--Serie--</option>
+							<option value="serie">Xd</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Fecha</span>
+					</div>
+					<input class="form-control" type="date" name="fecha" id="datetime">
+				</div>
+				<div class="col-md-6">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Comprador</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="comprador" id="comprador">
+							<option value="default">--Comprador--</option>
+							<option value="comprador">Milton Mejia</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<hr>
+				</div>
+
+				<div class="col-md-12">
+					<h2>Datos Complementarios</h2>
+				</div>
+
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Procesador</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="procesador" id="procesador">
+							<option value="default">--Procesador--</option>
+							<option value="procesador">Xd</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Memoria</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="memoria" id="memoria">
+							<option value="default">--Memoria--</option>
+							<option value="memoria">Xd</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Disco Duro</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="disco" id="disco">
+							<option value="default">--Disco Duro--</option>
+							<option value="disco">Xd</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-12">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Comentarios</span>
+					</div>
+					<textarea class="form-control" name="comentario"></textarea>
+				</div>
+
+				<div class="col-md-12">
+					<hr>
+				</div>
+
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-outline-success">GUARDAR</button>
+				</div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-outline-secondary">MODIFICAR</button>
+				</div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-outline-danger">ELIMINAR</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
+    
