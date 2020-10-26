@@ -1,3 +1,4 @@
+
 nav {
 	background-color: #ab343a;
 }
@@ -15,57 +16,7 @@ nav .dropdown-menu a {
 	color: #fff;
 }
 
-div.form-group {
-	margin-top: 5%;
-}
-
-.row > div{
-  background: #f2f2f2;
-  padding: 10px 30px;
-}
-
-/*aposition = position relative ------ bposition = position absolute*/
-
-span.input-group-text {
-	background-color: #f2f2f2;
-	color: #ab343a;
-	font-weight: bold;
-	border-style: none;
-}
-
-div.titulo {
-	background-color: #ab343a;
-	width: 100%;
+.container {
+	margin: 15% auto 0 auto;
 	text-align: center;
-	color: #fff;
-	padding: 10px;
-}
-
-/*select.form-control {
-	color: #fff;
-	background-color: #ab343a;
-}*/
-
-div hr {
-	height: 1px;
-	background-color: #000;
-}
-
-
-label.tipo-eq select{
-	padding: 4px 40px 4px 40px;
-}
-
-select.proveedor { 
-	width: 565px;			
-}
-
-
-textarea.comentarios{
-	height: 149px;
-	width: 970px;
-}
-
-button.btn {
-	width: 100%;
 }
