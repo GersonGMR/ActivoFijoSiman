@@ -3,7 +3,7 @@
 <head>
 	<style type="text/css">
 	</style>
-	<link rel="stylesheet" type="text/css" href="/css/home.css">
+	<link rel="stylesheet" type="text/css" href="/css/ingresoActivo.css">
 	<!-- Required meta tags -->
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,114 +17,8 @@
 <body>
 
 
-	<nav class="navbar navbar-expand-lg navbar-dark">
-	  <a class="navbar-brand" href="#">Siman</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Ingreso Activo
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	        </div>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Asignación
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	        </div>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Reasignación
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	        </div>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Préstamos
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Action</a>
-	          <a class="dropdown-item" href="#">Another action</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Consultas
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Reportes
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Utilitarios
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Mantenimientos
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Seguridad
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
-	      </li>
-	    </ul>
-
-	    <form class="form-inline my-2 my-lg-0">
-	      <a class="navbar-brand" href="#">Salir</a>
-	    </form>
-	  </div>
-	</nav>
+	<!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>  
 
 <!--Luego mejorar esta parte como la de entrada de datos-->
 	<div class="form-group">
@@ -146,25 +40,25 @@
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Organización</span>
 					</div>
-					<input type="text" class="form-control" name="organizacion" placeholder="ALSISA S.A DE C.V" readonly>
+					<input type="text" class="form-control" name="organizacion" placeholder="ALSISA S.A DE C.V" >
 				</div>
 				<div class="col-md-3">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">País</span>
 					</div>
-					<input type="text" class="form-control" name="pais" placeholder="El SALVADOR" readonly>
+					<input type="text" class="form-control" name="pais" placeholder="El SALVADOR">
 				</div>
 				<div class="col-md-3">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Compañía</span>
 					</div>
-					<input type="text" class="form-control" name="compañia" placeholder="Almacenes Siman S.A de C.V El Salvador" readonly>
+					<input type="text" class="form-control" name="compañia" placeholder="Almacenes Siman S.A de C.V El Salvador">
 				</div>
 				<div class="col-md-3">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Garantía</span>
 					</div>
-					<input type="text" class="form-control" name="garantia" placeholder="" readonly>
+					<input type="text" class="form-control" name="garantia" placeholder="">
 				</div>
 
 				<div class="col-md-3">

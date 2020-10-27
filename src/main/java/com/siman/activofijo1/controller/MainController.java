@@ -20,11 +20,25 @@ public class MainController {
         return modelAndView;
     }
     
-    @RequestMapping(value = "/ingresoActivo", method = RequestMethod.GET)
+    @RequestMapping(value = { "/home" }, method = RequestMethod.GET)
     public ModelAndView home() {
+    	ModelAndView modelAndView = new ModelAndView();
+    	modelAndView.setViewName("home"); //resources/templates/index.html
+        return modelAndView;
+    }
+    
+    @RequestMapping(value = "/ingresoActivo", method = RequestMethod.GET)
+    public ModelAndView ingresoActivo() {
     	ModelAndView modelAndView = new ModelAndView();
     	modelAndView.setViewName("ingresoActivo"); //resources/templates/home.html
     	return modelAndView;
     }
- 
+    
+    @RequestMapping(value = "/logoutSuccessful", method = RequestMethod.GET)
+    public String logoutSuccessfulPage(Model model) {
+        model.addAttribute("title", "Logout");
+        return "logoutSuccessfulPage";
+    }
+    
+    
 }
