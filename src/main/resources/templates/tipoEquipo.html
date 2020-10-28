@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+	</style>
+	<link rel="stylesheet" type="text/css" href="ingresoActivo.css">
+	<!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Tipo de Equipo</title>
+
+</head>
+<body>
+
+
+	<!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>
+
+<!--Luego mejorar esta parte como la de entrada de datos-->
+	<div class="form-group">
+		<div class="container">
+			<div class="row">
+				<div class="titulo">
+					<h1>Tipo de Equipo</h1>
+				</div>
+			</div>
+		</div>
+
+	<form method="" action ="">
+		<div class = "container">
+			<div class=row>
+
+		<!--Luego mejorar esta parte como la de entrada de datos-->
+
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Descripción</span>
+					</div>
+					<input type="text" class="form-control" name="descripcion" placeholder="">
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Flag</span>
+					</div>
+					<input type="text" class="form-control" name="flag" placeholder="">
+				</div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Estado</span>
+					</div>
+					<div class="dropdown">
+						<select class="form-control" name="estado" id="estado">
+							<option hidden selected>Estado</option>
+							<option value="1">Activo</option>
+							<option value="0">Inactivo</option>
+						</select>
+					</div>
+				</div>
+
+
+				<div class="col-md-12">
+					<hr>
+				</div>
+
+
+				<div class="col-md-12">
+					<h5>*Seleccione un item de la tabla para modificarlo o eliminarlo</h5>
+				</div>
+				<div class="col-md-12">
+					<table class="table">
+						<tr>
+							<th scope="col">Descripción</th>
+							<th scope="col">Flag</th>
+							<th scope="col">Estado</th>
+						</tr>
+						<tr>
+							<td>Ejemplo 1</td>
+							<td>Ejemplo 1</td>
+							<td>Estado 1</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="col-md-12">
+					<hr>
+				</div>
+
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-outline-success">GUARDAR</button>
+				</div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-outline-secondary">MODIFICAR</button>
+				</div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-outline-danger">ELIMINAR</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
