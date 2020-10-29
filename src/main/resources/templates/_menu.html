@@ -8,7 +8,7 @@
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Ingreso Activo 
+	          Ingreso Activo
 	        </a>
 	           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" th:href="@{/ingresoActivo}">Hardware</a>
@@ -81,11 +81,26 @@
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Mantenimientos
 	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Hardware</a>
-	          <a class="dropdown-item" href="#">Software</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <div class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Activo Fijo</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" th:href="@{/tipoEquipo1}">Tipo Equipo</a></li>
+                  <li><a class="dropdown-item" th:href="@{/claseEquipo}">Clase Equipo</a></li>
+                  <li><a class="dropdown-item" th:href="@{/marca}">Marca</a></li>
+                  <li><a class="dropdown-item" th:href="@{/familia}">Familia</a></li>
+                  <li><a class="dropdown-item" th:href="@{/modelo}">Modelo</a></li>
+                </ul>
+            </div>
+	          <div class="dropdown-submenu">
+                <a class="dropdown-item dropdown-toggle" href="#">Ingreso Software</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Clase Software</a></li>
+                  <li><a class="dropdown-item" href="#">Clase Licencia</a></li>
+                  <li><a class="dropdown-item" href="#">Tipo Licencia</a></li>
+                  <li><a class="dropdown-item" href="#">Software</a></li>
+                </ul>
+            </div>
 	        </div>
 	      </li>
 	      <li class="nav-item dropdown">
