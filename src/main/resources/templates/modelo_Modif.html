@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Tipo de Equipo</title>
+    <title>Modelo</title>
 
 </head>
 <body>
@@ -25,47 +25,41 @@
 		<div class="container">
 			<div class="row">
 				<div class="titulo">
-					<h1>Tipo de Equipo</h1>
+					<h1>Modelo</h1>
 				</div>
 			</div>
 		</div>
 
-	<form th:action="@{/update}" th:object="${listEquipo}" method="post" onsubmit="return confirm('¿Estás seguro que quieres modificar este registro?');">
+	<form th:action="@{/updateModelo}" th:object="${listModelo}" method="post" onsubmit="return confirm('¿Estás seguro que quieres modificar este registro?');">
 		<div class = "container">
 			<div class=row>
 
 		<!--Luego mejorar esta parte como la de entrada de datos-->
-                <div class="col-md-3">
+				
+				<div class="col-md-4">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">ID</span>
 					</div>
-					<input type="text" class="form-control" name="descripcion" th:field="*{id_tipoequipo}" readonly="readonly">
+					<input type="text" class="form-control" name="descripcion" th:field="*{id_modelo}" readonly="readonly">
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Descripción</span>
+					    <span class="input-group-text" id="basic-addon1" >Nombre modelo</span>
 					</div>
-					<input type="text" class="form-control" name="descripcion" th:field="*{descripcion}">
+					<input type="text" class="form-control" name="nombre" placeholder="" th:field="*{nombre_modelo}">
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Flag</span>
-					</div>
-					<input type="text" class="form-control" name="flag" th:field="*{flag}">
-				</div>
-				<div class="col-md-3">
-					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Estado</span>
+					    <span class="input-group-text" id="basic-addon1">Familia de Equipo</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="estado" id="estado" th:field="*{id_estado}">
-							<option value="0" selected disabled hidden>Estado</option>
-							<option value="1">Activo</option>
-							<option value="2">Inactivo</option>
+						<select class="form-control" th:field="*{id_familia}" required>
+							<option value="0" selected disabled hidden>Familia equipo</option>
+							<option th:each="getMofam : ${nombre_familia}" th:value="${getMofam.id_familia}" th:text="${getMofam.nombre_familia}"/>
 						</select>
 					</div>
 				</div>
-				
+
 				<br><br><br><br><br>
 				
 				
@@ -74,7 +68,7 @@
 					<button type="submit" class="btn btn-outline-primary">MODIFICAR</button>
 				</div>
 				<div class="col-md-4">
-					<a class="btn btn-outline-danger" th:href="@{/tipoEquipo1}" role="button" style="width: 100%;">REGRESAR</a>
+					<a class="btn btn-outline-danger" th:href="@{/modelo}" role="button" style="width: 100%;">REGRESAR</a>
 				</div>
 				<div class="col-md-2"></div>
 			</div>

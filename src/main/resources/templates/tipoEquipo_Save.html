@@ -30,7 +30,7 @@
 			</div>
 		</div>
 
-	<form action="#" th:action="@{/save}" th:object="${listEquipo}" method="post">
+	<form action="#" th:action="@{/save}" th:object="${listEquipo}" method="post" onsubmit="return confirm('¿Estás seguro que quieres ingresar este registro?');">
 		<div class = "container">
 			<div class=row>
 

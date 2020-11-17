@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Tipo de Equipo</title>
+    <title>Familia</title>
 
 </head>
 <body>
@@ -25,19 +25,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="titulo">
-					<h1>Tipo de Equipo</h1>
+					<h1>Familia</h1>
 				</div>
 			</div>
 		</div>
 
-	<form >
+	<form method="" action ="">
 		<div class = "container">
 			<div class=row>
 
 		<!--Luego mejorar esta parte como la de entrada de datos-->
 
 				<div class="col-md-4">
-					<a class="btn btn-outline-success" th:href="@{/tipoEquipo_Save}" role="button">Agregar Nuevo Registro</a>
+					<a class="btn btn-outline-success" th:href="@{/familia_Save}" role="button">Agregar Nuevo Registro</a>
 				</div>
 				<div class="col-md-8"></div>
 
@@ -50,23 +50,23 @@
 				<div class="col-md-12">
 					<h5>*Seleccione un item de la tabla para modificarlo o eliminarlo</h5>
 				</div>
-				<div class="table-responsive">
-					<table class="table table-striped">
+				<div class="col-md-12">
+					<table class="table">
 						<tr>
 						    <th scope="col">ID</th>
-							<th scope="col">Descripcion</th>
+							<th scope="col">Familia</th>
 							<th scope="col">Flag</th>
-							<th scope="col">Estado</th>
+							<th scope="col">Marca de equipo</th>
 							<th scope="col">Acciones</th>
 						</tr>
-						<tr th:each="tipoequipo : ${listEquipo}">
-							<td th:text="${tipoequipo.id_tipoequipo}">ID</td>
-							<td th:text="${tipoequipo.descripcion}">Descripcion</td>
-							<td th:text="${tipoequipo.flag}">Flag</td>
-							<td th:text="${tipoequipo.estado}">Estado</td>
+						<tr th:each="familiaequipo : ${listFamilia}">
+							<td th:text="${familiaequipo.id_familia}">ID</td>
+							<td th:text="${familiaequipo.nombre_familia}">Familia</td>
+							<td th:text="${familiaequipo.flag}">Flag</td>
+							<td th:text="${familiaequipo.nombre_marca}">Marca de equipo</td>
 							<td>
-							<form onsubmit="return confirm('¿Estás seguro que quieres eliminar este registro?');" th:action="@{/delete/{id_tipoequipo}(id_tipoequipo=${tipoequipo.id_tipoequipo})}">
-							<a th:href="@{/edit/{id_tipoequipo}(id_tipoequipo=${tipoequipo.id_tipoequipo})}" class="btn btn-outline-primary">Modificar</a>
+							<form onsubmit="return confirm('¿Estás seguro que quieres eliminar este registro?');" th:action="@{/deleteFamilia/{id_familia}(id_familia=${familiaequipo.id_familia})}">
+							<a th:href="@{/editFamilia/{id_familia}(id_familia=${familiaequipo.id_familia})}" class="btn btn-outline-primary">Modificar</a>
 							&nbsp;&nbsp;
                             <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                             </form>
@@ -74,7 +74,6 @@
 						</tr>
 					</table>
 				</div>
-
 			</div>
 		</div>
 	</form>
