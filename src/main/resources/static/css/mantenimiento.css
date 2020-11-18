@@ -24,6 +24,7 @@ div.form-group {
   padding: 10px 30px;
 }
 
+/*aposition = position relative ------ bposition = position absolute*/
 
 span.input-group-text {
 	background-color: #f2f2f2;
@@ -40,6 +41,10 @@ div.titulo {
 	padding: 10px;
 }
 
+/*select.form-control {
+	color: #fff;
+	background-color: #ab343a;
+}*/
 
 div hr {
 	height: 1px;
@@ -59,10 +64,6 @@ select.proveedor {
 textarea.comentarios{
 	height: 149px;
 	width: 970px;
-}
-
-button.btn {
-	width: 100%;
 }
 
 

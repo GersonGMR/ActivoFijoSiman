@@ -81,7 +81,7 @@
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Mantenimientos
 	        </a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <div class="dropdown-submenu">
                 <a class="dropdown-item dropdown-toggle" href="#">Activo Fijo</a>
                 <ul class="dropdown-menu">
@@ -90,9 +90,16 @@
                   <li><a class="dropdown-item" th:href="@{/marcaEquipo}">Marca</a></li>
                   <li><a class="dropdown-item" th:href="@{/familia}">Familia</a></li>
                   <li><a class="dropdown-item" th:href="@{/modelo}">Modelo</a></li>
+                  <li><a class="dropdown-item" th:href="@{/sistemaOp}">Sistema Operativo</a></li>
+                  <li><a class="dropdown-item" th:href="@{/procesador}">Procesador</a></li>
+                  <li><a class="dropdown-item" th:href="@{/memoria}">Memoria</a></li>
+                  <li><a class="dropdown-item" th:href="@{/discoDuro}">Disco Duro</a></li>
                 </ul>
-            </div>
-	          
+               </div>
+               
+	           <a class="dropdown-item" th:href="@{/proveedor}">Proveedor</a>
+	           <a class="dropdown-item" th:href="@{/garantia}">Garantia</a>
+	           <a class="dropdown-item" th:href="@{/comprador}">Comprador</a>
 	        </div>
 	      </li>
 	      <li class="nav-item dropdown">

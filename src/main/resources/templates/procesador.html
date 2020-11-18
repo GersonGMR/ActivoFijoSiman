@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Marca</title>
+    <title>Procesador</title>
 
 </head>
 <body>
@@ -25,7 +25,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="titulo">
-					<h1>Marca</h1>
+					<h1>Procesador</h1>
 				</div>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 		<!--Luego mejorar esta parte como la de entrada de datos-->
 
 				<div class="col-md-4">
-					<a class="btn btn-outline-success" th:href="@{/marcaEquipo_Save}" role="button">Agregar Nuevo Registro</a>
+					<a class="btn btn-outline-success" th:href="@{/procesador_Save}" role="button">Agregar Nuevo Registro</a>
 				</div>
 				<div class="col-md-8"></div>
 
@@ -54,16 +54,12 @@
 					<table class="table">
 						<tr>
 						    <th scope="col">ID</th>
-							<th scope="col">Marca</th>
-							<th scope="col">Flag</th>
-							<th scope="col">Clase de equipo</th>
+							<th scope="col">Procesador</th>
 							<th scope="col">Acciones</th>
 						</tr>
 						<tr th:each="marcaequipo : ${listMarca}">
 							<td th:text="${marcaequipo.id_marca}">ID</td>
-							<td th:text="${marcaequipo.nombre_marca}">Marca</td>
-							<td th:text="${marcaequipo.flag}">Flag</td>
-							<td th:text="${marcaequipo.nombre_claseequipo}">Clase de equipo</td>
+							<td th:text="${marcaequipo.nombre_marca}">Procesador</td>
 							<td>
 							<form onsubmit="return confirm('¿Estás seguro que quieres eliminar este registro?');" th:action="@{/deleteMarca/{id_marca}(id_marca=${marcaequipo.id_marca})}">
 							<a th:href="@{/editMarca/{id_marca}(id_marca=${marcaequipo.id_marca})}" class="btn btn-outline-primary">Modificar</a>

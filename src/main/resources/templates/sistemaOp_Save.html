@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+	</style>
+	<link rel="stylesheet" type="text/css" href="/css/ingresoActivo.css">
+	<!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Sistema Operativo</title>
+
+</head>
+<body>
+
+
+	<!-- Include _menu.html -->
+      <th:block th:include="/_menu"></th:block>
+
+<!--Luego mejorar esta parte como la de entrada de datos-->
+	<div class="form-group">
+		<div class="container">
+			<div class="row">
+				<div class="titulo">
+					<h1>Sistema Operativo</h1>
+				</div>
+			</div>
+		</div>
+
+	<form th:action="@{/saveMarca}" th:object="${listMarca}" method="post" onsubmit="return confirm('¿Estás seguro que quieres ingresar este registro?');">
+		<div class = "container">
+			<div class=row>
+
+		<!--Luego mejorar esta parte como la de entrada de datos-->
+				
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="input-group-prepend">
+					    <span class="input-group-text" id="basic-addon1">Sistema Operativo</span>
+					</div>
+					<input type="text" class="form-control" name="nombre" placeholder="" th:field="*{nombre_marca}">
+				</div>
+				<div class="col-md-4"></div>
+
+				<br><br><br><br><br>
+				
+				
+				<div class="col-md-2"></div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-outline-success">GUARDAR</button>
+				</div>
+				<div class="col-md-4">
+					<a class="btn btn-outline-danger" th:href="@{/sistemaOp}" role="button" style="width: 100%;">REGRESAR</a>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+	</form>
+	</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
