@@ -10,6 +10,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+   
 
     <title>Creando Activo Fijo</title>
 
@@ -84,9 +86,9 @@
 					    <span class="input-group-text" id="basic-addon1">Tipo de Equipo</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="tipo_equipo" id="equipo">
+						<select class="form-control" name="tipo_equipo" id="TipoEquipos">
 							<option value="default">--Opciones--</option>
-							<option value="cpu">CPU</option>
+							<!-- option value="cpu">CPU</option>  -->
 						</select>
 					</div>
 				</div>
@@ -122,7 +124,7 @@
 					<div class="dropdown">
 						<select class="form-control" name="proveedor" id="proveedor">
 							<option value="default">--Proveedor--</option>
-	  						<option value="proveedor">Milton Mejia</option>
+	  						<option value="proveedor">---</option>
 						</select>
 					</div>
 				</div>
@@ -166,11 +168,9 @@
 					    <span class="input-group-text" id="basic-addon1">Clase Equipo</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="clase_equipo" id="clase_equipo">
+						<select class="form-control" name="clase_equipo" id="ClaseEquipos">
 							<option value="default">--Equipo--</option>
-	  						<option value="clase_equipo">Xd</option>
-						</select>
-	  						
+	  						<!-- option value="clase_equipo">Xd</option> -->
 						</select>
 					</div>
 				</div>
@@ -179,9 +179,9 @@
 					    <span class="input-group-text" id="basic-addon1">Marca</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="marca" id="marca">
+						<select class="form-control" name="marca" id="MarcaEquipos">
 							<option value="default">--Marca--</option>
-	  						<option value="marca">Xd</option>
+	  						<!-- option value="marca">Xd</option> -->
 						</select>
 					</div>
 				</div>
@@ -322,9 +322,64 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script> src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"</script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+	$.ajax({
+		url : 'src/main/java/com/siman/activofijo1/TipoEquiposServlet',
+		cache: false, 
+		dataType : 'json',
+		success : function(result) {
+			$.each(result, function(key, value){
+				$('<option>').val(key).text(value).appendTo("#TipoEquipos")
+			});
+		}
+	});
+});
+
+$(document).on("change", "#TipoEquipos", function(){
+	$("#ClaseEquipos").find('option').remove();
+	$('<option>').val("").text("-Select Clase Equipos-").appendTo("#ClaseEquipos");
+	$("#MarcaEquipos").find('option').remove();
+	$('<option>').val("").text("-Select Marca-").appendTo("#MarcaEquipos");
+	//posiblemente tengo que poner las otras dos clases que me faltan
+	var selectTipoEquiposId = $("#TipoEquipos").val();
+	$.ajax({
+		url : "/ClaseEquipoServlet",
+		data: {
+			tipoequipoId : selectTipoEquiposId
+		},
+		dataType : 'Json',
+		success : function(result){
+			$.each(result, function(key, value){
+				$('<option>').val(key).text(value).appendTo("#ClaseEquipos")
+			});
+		}
+	});
+});
+
+$(document).on("change", "#ClaseEquipos", function(){
+	$("#MarcaEquipos").find('option').remove();
+	$('<option>').val("").text("-Select Marca-").appendTo("#MarcaEquipos");
+	var selectClaseEquiposId = $("#TipoEquipos").val();
+	$.ajax({
+		url : "/MarcaEquipoServlet",
+		data: {
+			claseequipoId : selectClaseEquiposId
+		},
+		dataType : 'Json',
+		success : function(result){
+			$.each(result, function(key, value){
+				$('<option>').val(key).text(value).appendTo("#MarcaEquipos")
+			});
+		}
+	});
+});
+</script>
 
 
 </body>
