@@ -57,12 +57,12 @@
 							<th scope="col">Memoria</th>
 							<th scope="col">Acciones</th>
 						</tr>
-						<tr th:each="marcaequipo : ${listMarca}">
-							<td th:text="${marcaequipo.id_marca}">ID</td>
-							<td th:text="${marcaequipo.nombre_marca}">Memoria</td>
+						<tr th:each="memoriamodel : ${listMemo}">
+							<td th:text="${memoriamodel.id_memoria}">ID</td>
+							<td th:text="${memoriamodel.memoria}">Memoria</td>
 							<td>
-							<form onsubmit="return confirm('¿Estás seguro que quieres eliminar este registro?');" th:action="@{/deleteMarca/{id_marca}(id_marca=${marcaequipo.id_marca})}">
-							<a th:href="@{/editMarca/{id_marca}(id_marca=${marcaequipo.id_marca})}" class="btn btn-outline-primary">Modificar</a>
+							<form onsubmit="return confirm('¿Estás seguro que quieres eliminar este registro?');" th:action="@{/deleteMemo/{id_memoria}(id_memoria=${memoriamodel.id_memoria})}">
+							<a th:href="@{/editMemo/{id_memoria}(id_memoria=${memoriamodel.id_memoria})}" class="btn btn-outline-primary">Modificar</a>
 							&nbsp;&nbsp;
                             <button type="submit" class="btn btn-outline-danger">Eliminar</button>
                             </form>

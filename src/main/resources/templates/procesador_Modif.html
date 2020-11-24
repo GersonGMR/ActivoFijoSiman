@@ -30,7 +30,7 @@
 			</div>
 		</div>
 
-	<form th:action="@{/updateMarca}" th:object="${listMarca}" method="post" onsubmit="return confirm('¿Estás seguro que quieres modificar este registro?');">
+	<form th:action="@{/updatePro}" th:object="${listPro}" method="post" onsubmit="return confirm('¿Estás seguro que quieres modificar este registro?');">
 		<div class ="container">
 			<div class=row>
 
@@ -40,7 +40,7 @@
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">ID</span>
 					</div>
-					<input type="text" class="form-control" name="descripcion" th:field="*{id_marca}" readonly="readonly">
+					<input type="text" class="form-control" name="descripcion" th:field="*{id_procesador}" readonly="readonly">
 				</div>
 				<div class="col-md-4">
 					<div class="input-group-prepend">

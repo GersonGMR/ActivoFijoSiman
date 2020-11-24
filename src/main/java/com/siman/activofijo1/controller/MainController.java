@@ -3,14 +3,28 @@ import java.security.Principal;
 import java.util.List;
 
 import com.siman.activofijo1.dao.claseEquipoDAO;
+import com.siman.activofijo1.dao.compradorDAO;
 import com.siman.activofijo1.dao.familiaEquipoDAO;
+import com.siman.activofijo1.dao.garantiaDAO;
+import com.siman.activofijo1.dao.hdDAO;
 import com.siman.activofijo1.dao.marcaEquipoDAO;
+import com.siman.activofijo1.dao.memoriaDAO;
 import com.siman.activofijo1.dao.modeloEquipoDAO;
+import com.siman.activofijo1.dao.procesadorDAO;
+import com.siman.activofijo1.dao.provDAO;
+import com.siman.activofijo1.dao.soDAO;
 import com.siman.activofijo1.dao.tipoEquipoDAO;
 import com.siman.activofijo1.model.claseEquipo;
+import com.siman.activofijo1.model.compradorModel;
 import com.siman.activofijo1.model.marcaEquipo;
+import com.siman.activofijo1.model.memoriaModel;
 import com.siman.activofijo1.model.modeloEquipo;
+import com.siman.activofijo1.model.procesadorModel;
+import com.siman.activofijo1.model.provModel;
+import com.siman.activofijo1.model.soModel;
 import com.siman.activofijo1.model.familiaEquipo;
+import com.siman.activofijo1.model.garantiaModel;
+import com.siman.activofijo1.model.hdModel;
 import com.siman.activofijo1.model.tipoEquipo;
 import com.siman.activofijo1.utils.WebUtils;
 
@@ -39,6 +53,20 @@ public class MainController {
 	private familiaEquipoDAO dao3;
 	@Autowired
 	private modeloEquipoDAO dao4;
+	@Autowired
+	private memoriaDAO dao5;
+	@Autowired
+	private soDAO dao6;
+	@Autowired
+	private procesadorDAO dao7;
+	@Autowired
+	private hdDAO dao8;
+	@Autowired
+	private provDAO dao9;
+	@Autowired
+	private garantiaDAO dao10;
+	@Autowired
+	private compradorDAO dao11;
 	
 	@RequestMapping(value = { "/index" }, method = RequestMethod.GET)
     public ModelAndView login() {
@@ -322,6 +350,313 @@ public class MainController {
 				    return "redirect:/modelo";      
 				}
 				//FIN VISTAS MANTENIMIENTO MODELO
-		
+				
+				//INICIO VISTAS MANTENIMIENTO MEMORIA
+				@RequestMapping("/memoria")
+				public String viewMemoPage(Model model) {
+					List<memoriaModel> listMemo = dao5.list();
+				    model.addAttribute("listMemo", listMemo);
+				    return "memoria"; //resources/templates/memoria.html
+				}
+				
+				@RequestMapping(value = "/saveMemo", method = RequestMethod.POST)
+				public String saveMemo(@ModelAttribute("memoriamodel") memoriaModel memoriamodel) {
+				    dao5.saveMemo(memoriamodel);
+				      
+				    return "redirect:/memoria";
+				}
+				
+				@RequestMapping("/editMemo/{id_memoria}")
+				public ModelAndView showEditMemoForm(@PathVariable(name = "id_memoria") int id_memoria) {
+				    ModelAndView mav = new ModelAndView("memoria_Modif");
+				    memoriaModel listMemo = dao5.getMemo(id_memoria);
+				    mav.addObject("listMemo", listMemo);
+				    return mav;
+				}
+				
+				@RequestMapping("/memoria_Save")
+				public String showMemoForm(Model model) {
+					memoriaModel listMemo = new memoriaModel();
+				    model.addAttribute("listMemo", listMemo);
+				    return "memoria_Save";
+				}
+				
+				@RequestMapping(value = "/updateMemo", method = RequestMethod.POST)
+				public String updateMemo(@ModelAttribute("listMemo") memoriaModel memoriamodel) {
+				    dao5.updateMemo(memoriamodel);
+				      
+				    return "redirect:/memoria";
+				}
+				
+				@RequestMapping("/deleteMemo/{id_memoria}")
+				public String deleteMemo(@PathVariable(name = "id_memoria") int id_memoria) {
+				    dao5.deleteMemo(id_memoria);
+				    return "redirect:/memoria";      
+				}
+				//FIN VISTAS MANTENIMIENTO MEMORIA
+				
+				//INICIO VISTAS MANTENIMIENTO SO
+				@RequestMapping("/sistemaOp")
+				public String viewSOPage(Model model) {
+					List<soModel> listSO = dao6.list();
+				    model.addAttribute("listSO", listSO);
+				    return "sistemaOp"; //resources/templates/memoria.html
+				}
+				
+				@RequestMapping(value = "/saveSO", method = RequestMethod.POST)
+				public String saveSO(@ModelAttribute("somodel") soModel somodel) {
+				    dao6.saveSO(somodel);
+				      
+				    return "redirect:/sistemaOp";
+				}
+				
+				@RequestMapping("/editSO/{id_sistemaop}")
+				public ModelAndView showEditSOForm(@PathVariable(name = "id_sistemaop") int id_sistemaop) {
+				    ModelAndView mav = new ModelAndView("sistemaOp_Modif");
+				    soModel listSO = dao6.getSO(id_sistemaop);
+				    mav.addObject("listSO", listSO);
+				    return mav;
+				}
+				
+				@RequestMapping("/sistemaOp_Save")
+				public String showSOForm(Model model) {
+					soModel listSO = new soModel();
+				    model.addAttribute("listSO", listSO);
+				    return "sistemaOp_Save";
+				}
+				
+				@RequestMapping(value = "/updateSO", method = RequestMethod.POST)
+				public String updateSO(@ModelAttribute("listSO") soModel somodel) {
+				    dao6.updateSO(somodel);
+				      
+				    return "redirect:/sistemaOp";
+				}
+				
+				@RequestMapping("/deleteSO/{id_sistemaop}")
+				public String deleteSO(@PathVariable(name = "id_sistemaop") int id_sistemaop) {
+				    dao6.deleteSO(id_sistemaop);
+				    return "redirect:/sistemaOp";      
+				}
+				//FIN VISTAS MANTENIMIENTO SO
+				
+				//INICIO VISTAS MANTENIMIENTO PRO
+				@RequestMapping("/procesador")
+				public String viewProPage(Model model) {
+					List<procesadorModel> listPro = dao7.list();
+				    model.addAttribute("listPro", listPro);
+				    return "procesador"; //resources/templates/memoria.html
+				}
+				
+				@RequestMapping(value = "/savePro", method = RequestMethod.POST)
+				public String savePro(@ModelAttribute("procesadormodel") procesadorModel procesadormodel) {
+				    dao7.savePro(procesadormodel);
+				      
+				    return "redirect:/procesador";
+				}
+				
+				@RequestMapping("/editPro/{id_procesador}")
+				public ModelAndView showEditProForm(@PathVariable(name = "id_procesador") int id_procesador) {
+				    ModelAndView mav = new ModelAndView("procesador_Modif");
+				    procesadorModel listPro = dao7.getPro(id_procesador);
+				    mav.addObject("listPro", listPro);
+				    return mav;
+				}
+				
+				@RequestMapping("/procesador_Save")
+				public String showProForm(Model model) {
+					procesadorModel listPro = new procesadorModel();
+				    model.addAttribute("listPro", listPro);
+				    return "procesador_Save";
+				}
+				
+				@RequestMapping(value = "/updatePro", method = RequestMethod.POST)
+				public String updatePro(@ModelAttribute("listPro") procesadorModel procesadormodel) {
+				    dao7.updatePro(procesadormodel);
+				      
+				    return "redirect:/procesador";
+				}
+				
+				@RequestMapping("/deletePro/{id_procesador}")
+				public String deletePro(@PathVariable(name = "id_procesador") int id_procesador) {
+				    dao7.deletePro(id_procesador);
+				    return "redirect:/procesador";      
+				}
+				//FIN VISTAS MANTENIMIENTO PRO
+				
+				//INICIO VISTAS MANTENIMIENTO HD
+				@RequestMapping("/discoDuro")
+				public String viewhdPage(Model model) {
+					List<hdModel> listHD = dao8.list();
+				    model.addAttribute("listHD", listHD);
+				    return "discoDuro"; //resources/templates/memoria.html
+				}
+				
+				@RequestMapping(value = "/saveHD", method = RequestMethod.POST)
+				public String saveHD(@ModelAttribute("hdmodel") hdModel hdmodel) {
+				    dao8.saveHD(hdmodel);
+				      
+				    return "redirect:/discoDuro";
+				}
+				
+				@RequestMapping("/editHD/{id_discoduro}")
+				public ModelAndView showEdithdForm(@PathVariable(name = "id_discoduro") int id_discoduro) {
+				    ModelAndView mav = new ModelAndView("discoDuro_Modif");
+				    hdModel listHD = dao8.getHD(id_discoduro);
+				    mav.addObject("listHD", listHD);
+				    return mav;
+				}
+				
+				@RequestMapping("/discoDuro_Save")
+				public String showhdForm(Model model) {
+					hdModel listHD = new hdModel();
+				    model.addAttribute("listHD", listHD);
+				    return "discoDuro_Save";
+				}
+				
+				@RequestMapping(value = "/updateHD", method = RequestMethod.POST)
+				public String updateHD(@ModelAttribute("listHD") hdModel hdmodel) {
+				    dao8.updateHD(hdmodel);
+				      
+				    return "redirect:/discoDuro";
+				}
+				
+				@RequestMapping("/deleteHD/{id_discoduro}")
+				public String deleteHD(@PathVariable(name = "id_discoduro") int id_discoduro) {
+				    dao8.deleteHD(id_discoduro);
+				    return "redirect:/discoDuro";      
+				}
+				//FIN VISTAS MANTENIMIENTO HD
+				
+				//INICIO VISTAS MANTENIMIENTO PROVEEDOR
+				@RequestMapping("/proveedor")
+				public String viewprovPage(Model model) {
+					List<provModel> listProv = dao9.list();
+				    model.addAttribute("listProv", listProv);
+				    return "proveedor"; //resources/templates/memoria.html
+				}
+				
+				@RequestMapping(value = "/saveProv", method = RequestMethod.POST)
+				public String saveProv(@ModelAttribute("provmodel") provModel provmodel) {
+				    dao9.saveProv(provmodel);
+				      
+				    return "redirect:/proveedor";
+				}
+				
+				@RequestMapping("/editProv/{id_proveedor}")
+				public ModelAndView showEditprovForm(@PathVariable(name = "id_proveedor") int id_proveedor) {
+				    ModelAndView mav = new ModelAndView("proveedor_Modif");
+				    provModel listProv = dao9.getProv(id_proveedor);
+				    mav.addObject("listProv", listProv);
+				    return mav;
+				}
+				
+				@RequestMapping("/proveedor_Save")
+				public String showProvForm(Model model) {
+					provModel listProv = new provModel();
+				    model.addAttribute("listProv", listProv);
+				    return "proveedor_Save";
+				}
+				
+				@RequestMapping(value = "/updateProv", method = RequestMethod.POST)
+				public String updateProv(@ModelAttribute("listProv") provModel provmodel) {
+				    dao9.updateProv(provmodel);
+				      
+				    return "redirect:/proveedor";
+				}
+				
+				@RequestMapping("/deleteProv/{id_proveedor}")
+				public String deleteProv(@PathVariable(name = "id_proveedor") int id_proveedor) {
+				    dao9.deleteProv(id_proveedor);
+				    return "redirect:/proveedor";      
+				}
+				//FIN VISTAS MANTENIMIENTO PROVEEDOR
+				
+				//INICIO VISTAS MANTENIMIENTO GARANTIA
+				@RequestMapping("/garantia")
+				public String viewGarPage(Model model) {
+					List<garantiaModel> listGar = dao10.list();
+				    model.addAttribute("listGar", listGar);
+				    return "garantia"; //resources/templates/memoria.html
+				}
+				
+				@RequestMapping(value = "/saveGar", method = RequestMethod.POST)
+				public String saveGar(@ModelAttribute("garantiamodel") garantiaModel garantiamodel) {
+				    dao10.saveGar(garantiamodel);
+				      
+				    return "redirect:/garantia";
+				}
+				
+				@RequestMapping("/editGar/{id_garantia}")
+				public ModelAndView showEditGarForm(@PathVariable(name = "id_garantia") int id_garantia) {
+				    ModelAndView mav = new ModelAndView("garantia_Modif");
+				    garantiaModel listGar = dao10.getGar(id_garantia);
+				    mav.addObject("listGar", listGar);
+				    return mav;
+				}
+				
+				@RequestMapping("/garantia_Save")
+				public String showGarForm(Model model) {
+					garantiaModel listGar = new garantiaModel();
+				    model.addAttribute("listGar", listGar);
+				    return "garantia_Save";
+				}
+				
+				@RequestMapping(value = "/updateGar", method = RequestMethod.POST)
+				public String updateGar(@ModelAttribute("listGar") garantiaModel garantiamodel) {
+				    dao10.updateGar(garantiamodel);
+				      
+				    return "redirect:/garantia";
+				}
+				
+				@RequestMapping("/deleteGar/{id_garantia}")
+				public String deleteGar(@PathVariable(name = "id_garantia") int id_garantia) {
+				    dao10.deleteGar(id_garantia);
+				    return "redirect:/garantia";      
+				}
+				//FIN VISTAS MANTENIMIENTO GARANTIA
+				
+				//INICIO VISTAS MANTENIMIENTO COMPRADOR
+				@RequestMapping("/comprador")
+				public String viewComPage(Model model) {
+					List<compradorModel> listCom = dao11.list();
+				    model.addAttribute("listCom", listCom);
+				    return "comprador"; //resources/templates/memoria.html
+				}
+				
+				@RequestMapping(value = "/saveCom", method = RequestMethod.POST)
+				public String saveCom(@ModelAttribute("compradormodel") compradorModel compradormodel) {
+				    dao11.saveCom(compradormodel);
+				      
+				    return "redirect:/comprador";
+				}
+				
+				@RequestMapping("/editCom/{id_comprador}")
+				public ModelAndView showEditComForm(@PathVariable(name = "id_comprador") int id_comprador) {
+				    ModelAndView mav = new ModelAndView("comprador_Modif");
+				    compradorModel listCom = dao11.getCom(id_comprador);
+				    mav.addObject("listCom", listCom);
+				    return mav;
+				}
+				
+				@RequestMapping("/comprador_Save")
+				public String showComForm(Model model) {
+					compradorModel listCom = new compradorModel();
+				    model.addAttribute("listCom", listCom);
+				    return "comprador_Save";
+				}
+				
+				@RequestMapping(value = "/updateCom", method = RequestMethod.POST)
+				public String updateCom(@ModelAttribute("listCom") compradorModel compradormodel) {
+				    dao11.updateCom(compradormodel);
+				      
+				    return "redirect:/comprador";
+				}
+				
+				@RequestMapping("/deleteCom/{id_comprador}")
+				public String deleteCom(@PathVariable(name = "id_comprador") int id_comprador) {
+				    dao11.deleteCom(id_comprador);
+				    return "redirect:/comprador";      
+				}
+				//FIN VISTAS MANTENIMIENTO COMPRADOR
     
 }
