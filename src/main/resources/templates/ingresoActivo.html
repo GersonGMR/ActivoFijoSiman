@@ -32,7 +32,7 @@
 			</div>
 		</div>
 
-	<form method="" action ="" >
+	<form th:action="@{/saveActivo}" th:object="${listActivo}" method="post" onsubmit="return confirm('¿Estás seguro que quieres ingresar este registro?');">
 		<div class = "container">
 			<div class=row>
 
@@ -60,7 +60,7 @@
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Garantía</span>
 					</div>
-					<input type="text" class="form-control" name="garantia" placeholder="">
+					<input type="text" class="form-control" name="garantia" placeholder="1" th:field="*{id_usuario}">
 				</div>
 
 				<div class="col-md-3">
@@ -77,18 +77,18 @@
 				</div>
 				<div class="col-md-3">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Número Activo</span>
+					    <span class="input-group-text" id="basic-addon1">Número Activo *</span>
 					</div>
-					<input type="text" class="form-control" name="numeroactivo" placeholder="">
+					<input type="text" class="form-control" name="numeroactivo" placeholder="" th:field="*{numero_activo}" required>
 				</div>
 				<div class="col-md-3">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Tipo de Equipo</span>
+					    <span class="input-group-text" id="basic-addon1">Tipo de Equipo *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="tipo_equipo" id="TipoEquipos">
-							<option value="default">--Opciones--</option>
-							<!-- option value="cpu">CPU</option>  -->
+						<select class="form-control" th:field="*{id_tipoequipo}" id="tipo_equipo" required>
+							<option value="0" selected disabled hidden>Tipo equipo</option>
+							<option th:each="getTipoequipo : ${tequipo}" th:value="${getTipoequipo.id_tipoequipo}" th:text="${getTipoequipo.descripcion}"/>
 						</select>
 					</div>
 				</div>
@@ -102,29 +102,29 @@
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Ticket</span>
 					</div>
-					<input type="text" class="form-control" name="ticket" placeholder="">
+					<input type="text" class="form-control" name="ticket" placeholder="" th:field="*{ticket}">
 				</div>
 				<div class="col-md-4">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">PO</span>
 					</div>
-					<input type="text" class="form-control" name="orden_compra" placeholder="">
+					<input type="text" class="form-control" name="orden_compra" placeholder="" th:field="*{po}">
 				</div>
 				<div class="col-md-4">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Envio Entrada</span>
 					</div>
-					<input type="text" class="form-control" name="envio_entrada" placeholder="">
+					<input type="text" class="form-control" name="envio_entrada" placeholder="" th:field="*{envio_entrada}">
 				</div>
 
 				<div class="col-md-8">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Proveedor</span>
+					    <span class="input-group-text" id="basic-addon1">Proveedor *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="proveedor" id="proveedor">
-							<option value="default">--Proveedor--</option>
-	  						<option value="proveedor">---</option>
+						<select class="form-control" th:field="*{id_proveedor}" id="id_proveedor" required>
+							<option value="0" selected disabled hidden>Proveedor</option>
+							<option th:each="getProveedor : ${gproveedor}" th:value="${getProveedor.id_proveedor}" th:text="${getProveedor.nombre_proveedor}"/>
 						</select>
 					</div>
 				</div>
@@ -132,29 +132,29 @@
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Credito Fiscal</span>
 					</div>
-					<input type="text" class="form-control" name="credito_fiscal" placeholder="">
+					<input type="text" class="form-control" name="credito_fiscal" placeholder="" th:field="*{credito_fiscal}">
 				</div>
 
 				<div class="col-md-4">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Retaceo</span>
 					</div>
-					<input type="text" class="form-control" name="retaceo" placeholder="">
+					<input type="text" class="form-control" name="retaceo" placeholder="" th:field="*{retaceo}">
 				</div>
 				<div class="col-md-4">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Job Costing</span>
 					</div>
-					<input type="text" class="form-control" name="job_costing" placeholder="">
+					<input type="text" class="form-control" name="job_costing" placeholder="" th:field="*{job_costing}">
 				</div>
 				<div class="col-md-4">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Garantía</span>
+					    <span class="input-group-text" id="basic-addon1">Garantía *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="garantia" id="garantia">
-							<option value="default">opciones</option>
-							<option >1 MES</option>
+						<select class="form-control" th:field="*{id_garantia}" id="id_garantia" required>
+							<option value="0" selected disabled hidden>Garantía</option>
+							<option th:each="getGarantia : ${ggarantia}" th:value="${getGarantia.id_garantia}" th:text="${getGarantia.duracion_garantia}"/>
 						</select>
 					</div>
 				</div>
@@ -165,57 +165,57 @@
 
 				<div class="col-md-3">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Clase Equipo</span>
+					    <span class="input-group-text" id="basic-addon1">Clase Equipo *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="clase_equipo" id="ClaseEquipos">
-							<option value="default">--Equipo--</option>
-	  						<!-- option value="clase_equipo">Xd</option> -->
+						<select class="form-control" th:field="*{id_claseequipo}" id="id_claseequipo" required>
+							<option value="0" selected disabled hidden>Clase Equipo</option>
+							<option th:each="getClase : ${gclase}" th:value="${getClase.id_claseequipo}" th:text="${getClase.nombre_claseequipo}"/>
 						</select>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Marca</span>
+					    <span class="input-group-text" id="basic-addon1">Marca *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="marca" id="MarcaEquipos">
-							<option value="default">--Marca--</option>
-	  						<!-- option value="marca">Xd</option> -->
+						<select class="form-control" th:field="*{id_marca}" id="id_marca" required>
+							<option value="0" selected disabled hidden>Marca</option>
+							<option th:each="getMarca : ${gmarca}" th:value="${getMarca.id_marca}" th:text="${getMarca.nombre_marca}"/>
 						</select>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Familia</span>
+					    <span class="input-group-text" id="basic-addon1">Familia *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="familia" id="familia">
-							<option value="default">--Familia--</option>
-							<option value="familia">Xd</option>
+						<select class="form-control" th:field="*{id_familia}" id="id_familia" required>
+							<option value="0" selected disabled hidden>Familia</option>
+							<option th:each="getFamilia : ${gfamilia}" th:value="${getFamilia.id_familia}" th:text="${getFamilia.nombre_familia}"/>
 						</select>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Modelo</span>
+					    <span class="input-group-text" id="basic-addon1">Modelo *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="modelo" id="modelo">
-							<option value="default">--Modelo--</option>
-							<option value="modelo">Xd</option>
+						<select class="form-control" th:field="*{id_modelo}" id="id_modelo" required>
+							<option value="0" selected disabled hidden>Modelo</option>
+							<option th:each="getModelo : ${gmodelo}" th:value="${getModelo.id_modelo}" th:text="${getModelo.nombre_modelo}"/>
 						</select>
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Sistema Operativo</span>
+					    <span class="input-group-text" id="basic-addon1">Sistema Operativo *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="sistema_operativo" id="sistema_operativo">
-							<option value="default">--SO--</option>
-	  						<option value="sistema_operativo">Xd</option>
+						<select class="form-control" th:field="*{id_sistemaop}" id="id_sistemaop" required>
+							<option value="0" selected disabled hidden>Sistema Operativo</option>
+							<option th:each="getSistemao : ${gsistemao}" th:value="${getSistemao.id_sistemaop}" th:text="${getSistemao.nombre_sistemaop}"/>
 						</select>
 					</div>
 				</div>
@@ -223,29 +223,29 @@
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Llave Producto</span>
 					</div>
-					<input class="form-control" type="text" name ="key" placeholder="">
+					<input class="form-control" type="text" name ="key" placeholder="" th:field="*{llave_producto}">
 				</div>
 				<div class="col-md-4">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Serie</span>
+					    <span class="input-group-text" id="basic-addon1">Serie *</span>
 					</div>
-					<input class="form-control" type="text" name="serie" placeholder="">
+					<input class="form-control" type="text" name="serie" placeholder="" th:field="*{serie}" required>
 				</div>
 
 				<div class="col-md-6">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Fecha</span>
+					    <span class="input-group-text" id="basic-addon1">Fecha *</span>
 					</div>
-					<input class="form-control" type="date" name="fecha" id="datetime">
+					<input class="form-control" type="date" name="fecha" id="datetime" th:field="*{fecha_ingreso}" required>
 				</div>
 				<div class="col-md-6">
 					<div class="input-group-prepend">
-					    <span class="input-group-text" id="basic-addon1">Comprador</span>
+					    <span class="input-group-text" id="basic-addon1">Comprador *</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="comprador" id="comprador">
-							<option value="default">--Comprador--</option>
-							<option value="comprador">Milton Mejia</option>
+						<select class="form-control" th:field="*{id_comprador}" id="id_comprador" required>
+							<option value="0" selected disabled hidden>Comprador</option>
+							<option th:each="getComprador : ${gcomprador}" th:value="${getComprador.id_comprador}" th:text="${getComprador.nombre_comprador}"/>
 						</select>
 					</div>
 				</div>
@@ -263,9 +263,9 @@
 					    <span class="input-group-text" id="basic-addon1">Procesador</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="procesador" id="procesador">
-							<option value="default">--Procesador--</option>
-							<option value="procesador">Xd</option>
+						<select class="form-control" th:field="*{id_procesador}" id="id_procesador">
+							<option value="0" selected disabled hidden>Procesador</option>
+							<option th:each="getProcesador : ${procesador}" th:value="${getProcesador.id_procesador}" th:text="${getProcesador.nombre_procesador}"/>
 						</select>
 					</div>
 				</div>
@@ -274,9 +274,9 @@
 					    <span class="input-group-text" id="basic-addon1">Memoria</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="memoria" id="memoria">
-							<option value="default">--Memoria--</option>
-							<option value="memoria">Xd</option>
+						<select class="form-control" th:field="*{id_memoria}" id="id_memoria">
+							<option value="0" selected disabled hidden>Memoria</option>
+							<option th:each="getMemoria : ${memoria}" th:value="${getMemoria.id_memoria}" th:text="${getMemoria.memoria}"/>
 						</select>
 					</div>
 				</div>
@@ -286,18 +286,35 @@
 					    <span class="input-group-text" id="basic-addon1">Disco Duro</span>
 					</div>
 					<div class="dropdown">
-						<select class="form-control" name="disco" id="disco">
-							<option value="default">--Disco Duro--</option>
-							<option value="disco">Xd</option>
+						<select class="form-control" th:field="*{id_discoduro}" id="id_discoduro">
+							<option value="0" selected disabled hidden>Disco Duro</option>
+							<option th:each="getDisco : ${disco}" th:value="${getDisco.id_discoduro}" th:text="${getDisco.espacio}"/>
 						</select>
 					</div>
 				</div>
+				
+				<div class="col-md-4"></div>
+				
+				<div class="col-md-4">
+					<div class="form-check">
+					  	<input class="form-check-input" type="checkbox" th:value="1" id="mouse" th:field="*{mouse}">
+					  	<span class="input-group-text" id="basic-addon1">Mouse</span>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="form-check">
+					  	<input class="form-check-input" type="checkbox" th:value="1" id="teclado" th:field="*{teclado}">
+					  	<span class="input-group-text" id="basic-addon1">Teclado</span>
+					</div>
+				</div>
+				
 
 				<div class="col-md-12">
 					<div class="input-group-prepend">
 					    <span class="input-group-text" id="basic-addon1">Comentarios</span>
 					</div>
-					<textarea class="form-control" name="comentario"></textarea>
+					<textarea class="form-control" name="comentario" th:field="*{comentario}"></textarea>
 				</div>
 
 				<div class="col-md-12">
@@ -308,10 +325,10 @@
 					<button type="submit" class="btn btn-outline-success">GUARDAR</button>
 				</div>
 				<div class="col-md-4">
-					<button type="submit" class="btn btn-outline-secondary">MODIFICAR</button>
+					
 				</div>
 				<div class="col-md-4">
-					<button type="submit" class="btn btn-outline-danger">ELIMINAR</button>
+					<a class="btn btn-outline-danger" th:href="@{/home}" role="button" style="width: 100%;">REGRESAR</a>
 				</div>
 			</div>
 		</div>
