@@ -75,12 +75,12 @@ public class MainController {
         return modelAndView;
     }
 	
-	@RequestMapping(value = "/ingresoActivo", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/ingresoActivo", method = RequestMethod.GET)
     public ModelAndView ingresoActivo() {
     	ModelAndView modelAndView = new ModelAndView();
     	modelAndView.setViewName("ingresoActivo"); //resources/templates/ingresoActivo.html
     	return modelAndView;
-    }
+    }*/
 	
 	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
     public ModelAndView home() {
@@ -658,5 +658,59 @@ public class MainController {
 				    return "redirect:/comprador";      
 				}
 				//FIN VISTAS MANTENIMIENTO COMPRADOR
+	
+	//INICIO VISTAS MANTENIMIENTO ACTIVOFIJO
+	@RequestMapping("/ingresoActivo")
+	public String showActivoForm(Model model) {
+		activoFijo listActivo = new activoFijo();
+	    model.addAttribute("listActivo", listActivo);
+	    
+	    //LLENANDO COMBOBOX
+	    List<activoFijo> getTipoEquipo = dao5.getTipoEquipo();
+	    model.addAttribute("tequipo", getTipoEquipo);
+	    
+	    List<activoFijo> getProveedor = dao5.getProveedor();
+	    model.addAttribute("gproveedor", getProveedor);
+	    
+	    List<activoFijo> getGarantia = dao5.getGarantia();
+	    model.addAttribute("ggarantia", getGarantia);
+	    
+	    List<activoFijo> getClaseEquipo = dao5.getClaseEquipo();
+	    model.addAttribute("gclase", getClaseEquipo);
+	    
+	    List<activoFijo> getMarca = dao5.getMarca();
+	    model.addAttribute("gmarca", getMarca);
+	    
+	    List<activoFijo> getFamilia = dao5.getFamilia();
+	    model.addAttribute("gfamilia", getFamilia);
+	    
+	    List<activoFijo> getModelo = dao5.getModelo();
+	    model.addAttribute("gmodelo", getModelo);
+	    
+	    List<activoFijo> getSistemaOp = dao5.getSistemaOp();
+	    model.addAttribute("gsistemao", getSistemaOp);
+	    
+	    List<activoFijo> getComprador = dao5.getComprador();
+	    model.addAttribute("gcomprador", getComprador);
+	    
+	    List<activoFijo> getProcesador = dao5.getProcesador();
+	    model.addAttribute("procesador", getProcesador);
+	    
+	    List<activoFijo> getMemoria = dao5.getMemoria();
+	    model.addAttribute("memoria", getMemoria);
+	    
+	    List<activoFijo> getDiscoDuro = dao5.getDiscoDuro();
+	    model.addAttribute("disco", getDiscoDuro);
+	    
+	    return "ingresoActivo";
+	}
+	
+	@RequestMapping(value = "/saveActivo", method = RequestMethod.POST)
+	public String saveActivo(@ModelAttribute("activofijo") activoFijo activofijo) {
+	    dao5.saveActivo(activofijo);
+	      
+	    return "redirect:/ingresoActivo";
+	}
+	//FIN VISTAS MANTENIMIENTO ACTIVOFIJO
     
 }
