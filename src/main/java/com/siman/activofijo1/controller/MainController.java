@@ -2,6 +2,7 @@ package com.siman.activofijo1.controller;
 import java.security.Principal;
 import java.util.List;
 
+import com.siman.activofijo1.dao.activoFijoDAO;
 import com.siman.activofijo1.dao.claseEquipoDAO;
 import com.siman.activofijo1.dao.compradorDAO;
 import com.siman.activofijo1.dao.familiaEquipoDAO;
@@ -14,6 +15,7 @@ import com.siman.activofijo1.dao.procesadorDAO;
 import com.siman.activofijo1.dao.provDAO;
 import com.siman.activofijo1.dao.soDAO;
 import com.siman.activofijo1.dao.tipoEquipoDAO;
+import com.siman.activofijo1.model.activoFijo;
 import com.siman.activofijo1.model.claseEquipo;
 import com.siman.activofijo1.model.compradorModel;
 import com.siman.activofijo1.model.marcaEquipo;
@@ -67,6 +69,8 @@ public class MainController {
 	private garantiaDAO dao10;
 	@Autowired
 	private compradorDAO dao11;
+	@Autowired
+	private activoFijoDAO dao12;
 	
 	@RequestMapping(value = { "/index" }, method = RequestMethod.GET)
     public ModelAndView login() {
@@ -221,7 +225,7 @@ public class MainController {
 		
 		@RequestMapping("/marcaEquipo_Save")
 		public String showNewMarcaForm(Model model) {
-			familiaEquipo listMarca = new familiaEquipo();
+			marcaEquipo listMarca = new marcaEquipo();
 		    model.addAttribute("listMarca", listMarca);
 		    
 		    //LLENANDO COMBOBOX
@@ -666,40 +670,40 @@ public class MainController {
 	    model.addAttribute("listActivo", listActivo);
 	    
 	    //LLENANDO COMBOBOX
-	    List<activoFijo> getTipoEquipo = dao5.getTipoEquipo();
+	    List<activoFijo> getTipoEquipo = dao12.getTipoEquipo();
 	    model.addAttribute("tequipo", getTipoEquipo);
 	    
-	    List<activoFijo> getProveedor = dao5.getProveedor();
+	    List<activoFijo> getProveedor = dao12.getProveedor();
 	    model.addAttribute("gproveedor", getProveedor);
 	    
-	    List<activoFijo> getGarantia = dao5.getGarantia();
+	    List<activoFijo> getGarantia = dao12.getGarantia();
 	    model.addAttribute("ggarantia", getGarantia);
 	    
-	    List<activoFijo> getClaseEquipo = dao5.getClaseEquipo();
+	    List<activoFijo> getClaseEquipo = dao12.getClaseEquipo();
 	    model.addAttribute("gclase", getClaseEquipo);
 	    
-	    List<activoFijo> getMarca = dao5.getMarca();
+	    List<activoFijo> getMarca = dao12.getMarca();
 	    model.addAttribute("gmarca", getMarca);
 	    
-	    List<activoFijo> getFamilia = dao5.getFamilia();
+	    List<activoFijo> getFamilia = dao12.getFamilia();
 	    model.addAttribute("gfamilia", getFamilia);
 	    
-	    List<activoFijo> getModelo = dao5.getModelo();
+	    List<activoFijo> getModelo = dao12.getModelo();
 	    model.addAttribute("gmodelo", getModelo);
 	    
-	    List<activoFijo> getSistemaOp = dao5.getSistemaOp();
+	    List<activoFijo> getSistemaOp = dao12.getSistemaOp();
 	    model.addAttribute("gsistemao", getSistemaOp);
 	    
-	    List<activoFijo> getComprador = dao5.getComprador();
+	    List<activoFijo> getComprador = dao12.getComprador();
 	    model.addAttribute("gcomprador", getComprador);
 	    
-	    List<activoFijo> getProcesador = dao5.getProcesador();
+	    List<activoFijo> getProcesador = dao12.getProcesador();
 	    model.addAttribute("procesador", getProcesador);
 	    
-	    List<activoFijo> getMemoria = dao5.getMemoria();
+	    List<activoFijo> getMemoria = dao12.getMemoria();
 	    model.addAttribute("memoria", getMemoria);
 	    
-	    List<activoFijo> getDiscoDuro = dao5.getDiscoDuro();
+	    List<activoFijo> getDiscoDuro = dao12.getDiscoDuro();
 	    model.addAttribute("disco", getDiscoDuro);
 	    
 	    return "ingresoActivo";
@@ -707,7 +711,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/saveActivo", method = RequestMethod.POST)
 	public String saveActivo(@ModelAttribute("activofijo") activoFijo activofijo) {
-	    dao5.saveActivo(activofijo);
+	    dao12.saveActivo(activofijo);
 	      
 	    return "redirect:/ingresoActivo";
 	}
